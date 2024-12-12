@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{
+            background-image: url(BG_WELCOME.jpg);
+            background-position: center;
+            background-size: 150%;
+
+         
+        }
+        Box{
+            align-items: center;
+        }
+        
+        
+        
+        </style>
+  <title>Text Summarization and Sentiment Analysis</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Function to handle the summarize button click
+      $("#summarize-btn").click(function() {
+        var text = $("#text-field").val();
+        // Perform the text summarization and display the result
+        var summarizedText = summarizeText(text);
+        $("#summary").text(summarizedText);
+      });
+
+      // Function to handle the sentiment button click
+      $("#sentiment-btn").click(function() {
+        var text = $("#text-field").val();
+        // Perform sentiment analysis and display the result
+        var sentiment = analyzeSentiment(text);
+        $("#sentiment").text(sentiment);
+      });
+
+      // Function to summarize the text (dummy implementation)
+      function summarizeText(text) {
+        // Dummy implementation - Replace with your own text summarization logic
+        return "This is a summarized version of the input text.";
+      }
+
+      // Function to analyze the sentiment of the text (dummy implementation)
+      function analyzeSentiment(text) {
+        // Dummy implementation - Replace with your own sentiment analysis logic
+        return "Positive";
+      }
+    });
+  </script>
+</head>
+<body>
+    <div class="box">
+  <h1 style="text-align: center;">Text Summarization and Sentiment Analysis</h1>
+  <label for="text-field">Paste Your Text:</label><br>
+  <textarea id="text-field" rows="10" cols="50"></textarea><br><br>
+  <button id="summarize-btn">Summarize</button>
+  <button id="sentiment-btn">Sentiment</button>
+  <br><br>
+  <h2>Summary:</h2>
+  <p id="summary"></p>
+  <h2>Sentiment:</h2>
+  <p id="sentiment"></p>
+</div>
+</body>
+</html>
